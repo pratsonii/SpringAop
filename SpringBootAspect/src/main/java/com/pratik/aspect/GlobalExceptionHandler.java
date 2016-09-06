@@ -16,16 +16,16 @@ public class GlobalExceptionHandler
 	Logger log = Logger.getLogger(this.getClass());
 	
 	@ExceptionHandler(NullPointerException.class)
-	public ResponseEntity handleSQLException(HttpServletRequest request, Exception ex)
+	public ResponseEntity handleNullPointerException(HttpServletRequest request, Exception ex)
 	{
-		log.info("SQLException Occured:: URL="+request.getRequestURL());
-		return new ResponseEntity("database_error", HttpStatus.OK);
+		log.debug("NullPointerException Occured:: URL="+request.getRequestURL());
+		return new ResponseEntity("NullPointerException", HttpStatus.OK);
 	}
 	
 	@ExceptionHandler(CommonException.class)
 	public ResponseEntity handleCommonException(HttpServletRequest request, Exception ex)
 	{
-		log.info("CommonException Occured:: URL="+request.getRequestURL());
+		log.debug("CommonException Occured:: URL="+request.getRequestURL());
 		return new ResponseEntity(ex.getMessage(), HttpStatus.OK);
 	}
 }
