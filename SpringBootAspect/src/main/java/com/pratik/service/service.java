@@ -2,6 +2,8 @@ package com.pratik.service;
 
 import org.springframework.stereotype.Service;
 
+import com.pratik.CustomException.CommonException;
+
 @Service
 public class service {
 
@@ -10,8 +12,8 @@ public class service {
 		System.out.println("in test");
 	}
 	
-	public void exception()
+	public void exception() throws CommonException
 	{
-		throw new NullPointerException();
+		throw new CommonException("Love Pratik");
 	}
 }

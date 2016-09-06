@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pratik.CustomException.CommonException;
 import com.pratik.service.service;
 
 @RestController
@@ -21,7 +22,7 @@ public class AppController {
 	}
 
 	@RequestMapping(value="/update", method=RequestMethod.GET)	
-	public void updateUser()
+	public void updateUser() throws CommonException
 	{
 		System.out.println("update user");
 		
